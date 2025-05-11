@@ -9,3 +9,5 @@
 5. همان طور که در درس داده ساختار و bp خواندیم، چون اندازه ی آرایه فکیس نیست، هر موقع که به اندازه ی نصف رسید آرایه ای جدید با سایز ۲ برابر ساخته می شود و مقادیر copy می شود. تحلیل الگوریتم آن می گوید که O(1)  است، ولی ضریب ثابت می دهد  
 6. برای بهتر کردن آن می توان طول آرایه را از قبل fix گرفت![image](https://github.com/user-attachments/assets/9704c31c-624c-4314-bf68-f13236d25e68)
 
+
+[Report](https://docs.google.com/document/d/1DEvn08uMs--f0PwltJTUSVDdpQflN8gOmEVepkhdsLk/edit?tab=t.0)
