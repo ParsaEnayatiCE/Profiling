@@ -10,32 +10,76 @@
 6. برای بهتر کردن آن می توان طول آرایه را از قبل fix گرفت![image](https://github.com/user-attachments/assets/9704c31c-624c-4314-bf68-f13236d25e68)
 
 
-[Report](https://docs.google.com/document/d/1DEvn08uMs--f0PwltJTUSVDdpQflN8gOmEVepkhdsLk/edit?tab=t.0)
-
 بخش دوم:
+
 کدهای نابهینه و مشکلات آنها
+
 ۱. بخش محاسباتی (CPU-Intensive)
+
+کد نابهینه:
+
+java
+public long computeOriginal() {
+    long sum = 0;
+    for (int i = 0; i < 100000; i++) {
+        for (int j = 0; j < 10000; j++) {
+            sum += i * j; // محاسبه تودرتو با پیچیدگی O(n²)
+        }
+    }
+    return sum;
+}
+
 مشکلات:
+
 پیچیدگی زمانی O(n²) به دلیل حلقه‌های تودرتو
+
 انجام ۱ میلیارد عملیات ضرب و جمع
+
 مصرف بالای پردازنده و زمان اجرای طولانی
 
+![Screenshot 2025-05-13 164107](https://github.com/user-attachments/assets/473e50a4-9b87-4019-a229-fdff269a4b34)
+
+
+
 ۲. بخش مدیریت حافظه (Memory-Intensive)
+
 مشکلات:
+
 ایجاد ضمنی StringBuilder جدید در هر بار الحاق رشته
+
 تغییر اندازه پویای ArrayList و کپی‌های مکرر آرایه
+
 فشار زیاد به سیستم مدیریت حافظه (GC)
 
+![Screenshot 2025-05-13 164356](https://github.com/user-attachments/assets/cf3c578c-589a-459e-bfd8-4eeda4011e59)
+
+
 ۱. بهینه‌سازی محاسباتی
+
 بهبودها:
+
 کاهش پیچیدگی از O(n²) به O(n)
+
 کاهش از ۱ میلیارد به ۱۱۰ هزار عملیات
+![Screenshot 2025-05-13 164213](https://github.com/user-attachments/assets/e009d366-70cf-49f7-ac79-cdebd52d9842)
+
+
 
 ۲. بهینه‌سازی حافظه
+
 حذف ایجاد خودکار StringBuilder در هر تکرار
+
 پیش‌تنظیم ظرفیت ArrayList
+
 کاهش ۴۰٪ مصرف حافظه موقت
+
 کاهش ۷۰٪ فراخوانی‌های GC
+![Screenshot 2025-05-13 154738](https://github.com/user-attachments/assets/a9d41145-3beb-4fbe-9603-ad5adbe5ed15)
 
 
 در نهایت به کمک قطعه کدی یکسان بودن نتایج قبل و بعد از تغییر را بررسی کردیم.
+![Screenshot 2025-05-13 163444](https://github.com/user-attachments/assets/6b3cd237-ed8f-4ebc-82c1-19b1149dfa82)
+
+
+[Report](https://docs.google.com/document/d/1DEvn08uMs--f0PwltJTUSVDdpQflN8gOmEVepkhdsLk/edit?tab=t.0)
+
