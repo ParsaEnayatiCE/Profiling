@@ -17,17 +17,9 @@
 ۱. بخش محاسباتی (CPU-Intensive)
 
 کد نابهینه:
+![Screenshot 2025-05-13 173555](https://github.com/user-attachments/assets/510e9155-bfed-472e-ad39-4bff49c5593e)
 
-java
-public long computeOriginal() {
-    long sum = 0;
-    for (int i = 0; i < 100000; i++) {
-        for (int j = 0; j < 10000; j++) {
-            sum += i * j; // محاسبه تودرتو با پیچیدگی O(n²)
-        }
-    }
-    return sum;
-}
+
 
 مشکلات:
 
@@ -43,6 +35,9 @@ public long computeOriginal() {
 
 ۲. بخش مدیریت حافظه (Memory-Intensive)
 
+کد نابهینه:
+![Screenshot 2025-05-13 173620](https://github.com/user-attachments/assets/00b08949-afed-4636-8641-4682a8f4db45)
+
 مشکلات:
 
 ایجاد ضمنی StringBuilder جدید در هر بار الحاق رشته
@@ -56,6 +51,10 @@ public long computeOriginal() {
 
 ۱. بهینه‌سازی محاسباتی
 
+کد بهینه:
+![Screenshot 2025-05-13 173639](https://github.com/user-attachments/assets/5fbd1c57-34fa-4619-9fa7-a0be16d85024)
+
+
 بهبودها:
 
 کاهش پیچیدگی از O(n²) به O(n)
@@ -66,6 +65,11 @@ public long computeOriginal() {
 
 
 ۲. بهینه‌سازی حافظه
+
+کد بهینه:
+
+![Screenshot 2025-05-13 173655](https://github.com/user-attachments/assets/8fd22194-839c-4649-a798-ea7fdc282a11)
+
 
 حذف ایجاد خودکار StringBuilder در هر تکرار
 
